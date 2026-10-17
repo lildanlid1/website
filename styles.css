@@ -36,11 +36,6 @@ button:focus-visible,a:focus-visible{outline:2px solid #fff;outline-offset:4px}
 .social-icon:hover{transform:translateY(-3px) scale(1.05);background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.28);box-shadow:0 0 20px rgba(255,255,255,.12)}
 .social-icon svg{width:25px;height:25px;stroke-width:1.7}.curseforge{font-size:17px;font-weight:800;letter-spacing:-1.5px;color:white}
 .tab-caption{font-size:11px;color:var(--secondary);text-align:center;margin:11px 0 0}
-.discord-widget{display:flex;align-items:center;gap:14px;min-height:83px;padding:15px;border-radius:14px;background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.1);transition:background .2s,border-color .2s}
-.discord-widget:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.24)}
-.discord-widget-icon{display:grid;place-items:center;width:50px;height:50px;flex:none;border-radius:12px;background:rgba(255,255,255,.11)}.discord-widget-icon svg{width:29px;height:29px}
-.discord-widget-text{display:flex;flex:1;flex-direction:column;gap:5px;min-width:0}.discord-widget-text strong{font-size:15px;font-weight:600}.discord-widget-text small{font-size:12px;color:var(--secondary)}
-.widget-arrow{margin-left:auto;width:16px;height:16px;color:var(--secondary)}
 .about-list{margin:0;display:flex;flex-direction:column;gap:0;background:rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:5px 15px}
 .about-list div{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0}.about-list div+div{border-top:1px solid rgba(255,255,255,.07)}.about-list dt{color:var(--secondary);font-size:12px}.about-list dd{margin:0;font-size:12px;font-weight:500;text-align:right}
 .clock-panel{position:fixed;z-index:4;top:22px;right:22px;display:flex;align-items:center;gap:11px;border-radius:14px;padding:11px 14px;background:rgba(38,38,38,.45);border:2px solid var(--edge);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 4px 23px rgba(0,0,0,.15)}
@@ -123,9 +118,6 @@ button:focus-visible,a:focus-visible{outline:2px solid #fff;outline-offset:4px}
 .view-mark { width: 49px; height: 49px; fill: currentColor; color: white; margin-bottom: 18px; }
 .view-title { font-size: 27px; font-weight: 600; letter-spacing: -.4px; margin: 0; text-shadow: 0 0 20px rgba(255,255,255,.22); }
 .view-subtitle { color: var(--secondary); font-size: 13px; margin: 8px 0 0; }
-.discord-widget { text-align: left; }
-.discord-widget-icon { background: none; width: 33px; height: 33px; border-radius: 0; }
-.discord-widget-icon svg { width: 30px; height: 30px; }
 .profile-view-about { max-width: 365px; margin: 0 auto; }
 .about-head { display: flex; align-items: center; gap: 17px; margin-bottom: 24px; }
 .about-avatar { border-radius: 50%; object-fit: cover; width: 74px; height: 74px; }
@@ -182,8 +174,6 @@ button:focus-visible,a:focus-visible{outline:2px solid #fff;outline-offset:4px}
 
 .section-tabs{width:min(420px,calc(100% - 32px))}
 .profile-wrap{transition:width .2s ease}
-.profile-wrap.has-projects{width:min(590px,100%);min-height:520px}
-.profile-wrap.has-discord{min-height:560px}
 .glitch-name{position:relative;display:inline-block;isolation:isolate;font-size:clamp(24px,3.5vw,33px);letter-spacing:-.07em;white-space:nowrap;word-break:normal}
 .glitch-name::before,.glitch-name::after{content:attr(data-text);position:absolute;inset:0;pointer-events:none;opacity:0}
 .glitch-name::before{color:#d3edff;text-shadow:-1.7px 0 #84d1ff;animation:glitch-a 6.8s infinite}
@@ -198,23 +188,8 @@ button:focus-visible,a:focus-visible{outline:2px solid #fff;outline-offset:4px}
 .social-icon:nth-child(3n){transform:rotate(4deg)}
 .social-icon svg{filter:url(#sketch-lines);stroke-width:1.55;overflow:visible;width:29px;height:29px}
 .social-icon:nth-child(2n):hover,.social-icon:nth-child(2n):focus-visible,.social-icon:nth-child(3n):hover,.social-icon:nth-child(3n):focus-visible{transform:translateY(-4px) scale(1.12) rotate(0deg)}
-.projects-heading{text-align:left;margin-bottom:19px}.projects-heading .view-title{font-size:24px}.projects-heading .view-subtitle{margin-top:7px}
-.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.project-card{position:relative;display:flex;flex-direction:column;min-width:0;min-height:166px;padding:15px 16px;background:rgba(5,5,10,.24);border:1px solid rgba(255,255,255,.095);border-radius:13px;overflow:hidden;transition:background .27s,border-color .27s,transform .27s,box-shadow .27s}
-.project-card:hover,.project-card:focus,.project-card:focus-within{background:rgba(18,18,26,.8);border-color:rgba(255,255,255,.24);transform:translateY(-3px);box-shadow:0 10px 35px rgba(0,0,0,.18)}
-.project-top{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:10px;color:#a59da9;letter-spacing:.075em;text-transform:uppercase}
-.project-symbol{font-size:16px;transition:transform .24s}
-.project-card:hover .project-symbol,.project-card:focus-within .project-symbol{transform:translate(2px,-2px)}
-.project-card h3{font-size:19px;margin:10px 0 7px;font-weight:650;letter-spacing:-.03em}
-.project-short{font-size:12px;line-height:1.5;color:#c1bac2;margin:0}
-.project-extra{font-size:11px;line-height:1.55;color:#e0dae3;max-height:0;opacity:0;overflow:hidden;margin:0;transition:max-height .34s ease,opacity .27s,margin .27s}
-.project-card:hover .project-extra,.project-card:focus .project-extra,.project-card:focus-within .project-extra{max-height:110px;opacity:1;margin:10px 0 0}
-.project-card>a{display:inline-flex;align-items:center;gap:5px;margin-top:auto;padding-top:12px;font-size:11px;font-weight:600;text-decoration:underline;text-underline-offset:3px}
-.project-card>a span{font-size:14px}
-.projects-help{font-size:10px;color:#aaa4ab;margin:15px 0 0;text-align:center}
 .profile-view-discord{max-width:100%}.profile-view-discord .view-head{margin-bottom:17px}.profile-view-discord .view-mark{width:37px;height:37px;fill:none;stroke:currentColor;stroke-width:1.5;filter:url(#sketch-lines);margin-bottom:8px}
-.discord-frame-wrap{width:min(350px,100%);margin:0 auto;border-radius:11px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:rgba(0,0,0,.25)}
-.discord-frame-wrap iframe{display:block;width:100%;height:315px;border:0}
+.discord-description{max-width:285px;margin:0 auto 4px;font-size:13px;line-height:1.8;color:var(--secondary);text-align:center}
 .discord-join{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:#fff;margin:16px auto 0;padding:10px 14px;border:1px solid rgba(255,255,255,.14);border-radius:9px;background:rgba(255,255,255,.07);transition:background .2s,transform .2s}
 .discord-join:hover{background:rgba(255,255,255,.16);transform:translateY(-2px)}
 .about-paragraph{font-size:13px;line-height:1.8;color:#d1cbd1;margin:0 0 20px}
@@ -231,11 +206,9 @@ button:focus-visible,a:focus-visible{outline:2px solid #fff;outline-offset:4px}
 .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .saved-site-label{display:none!important}.badges{display:none!important}.profile-meta{display:none!important}
 @media(max-width:800px){.clock-panel{right:13px;bottom:14px}.audio-control{left:13px;bottom:14px}}
-@media(max-width:600px){.section-tabs{top:14px;max-width:calc(100% - 20px);padding:4px}.section-tabs button{padding:11px 6px;font-size:12px}.main-layout{padding-top:104px;padding-bottom:86px}.profile-wrap.has-projects{min-height:unset;padding:24px 20px}.project-card{padding:13px 12px;min-height:162px}.project-card h3{font-size:17px}.project-short{font-size:11px}.project-extra{font-size:10px}.profile-wrap.has-discord{min-height:540px}.neon-name{font-size:clamp(20px,7.3vw,29px)}.profile-heading{gap:15px}.profile-note{margin-top:22px}}
-@media(max-width:370px){.project-grid{grid-template-columns:1fr}.project-card{min-height:140px}.profile-wrap.has-projects{margin:26px 0 12px}.neon-name{font-size:21px}.profile-heading{gap:10px}.avatar-wrap{width:80px;height:80px}.profile-wrap.has-discord{padding:25px 13px}}
-@media(prefers-reduced-motion:reduce){.glitch-name::before,.glitch-name::after{animation:none;opacity:0}.project-extra{transition:none}}
+@media(max-width:600px){.section-tabs{top:14px;max-width:calc(100% - 20px);padding:4px}.section-tabs button{padding:11px 6px;font-size:12px}.main-layout{padding-top:104px;padding-bottom:86px}.neon-name{font-size:clamp(20px,7.3vw,29px)}.profile-heading{gap:15px}.profile-note{margin-top:22px}}
+@media(max-width:370px){.neon-name{font-size:21px}.profile-heading{gap:10px}.avatar-wrap{width:80px;height:80px}}
+@media(prefers-reduced-motion:reduce){.glitch-name::before,.glitch-name::after{animation:none;opacity:0}}
 
 @media(max-width:800px){.clock-panel{position:absolute;top:79px;right:13px;bottom:auto;padding:8px 10px;z-index:4}}
 @media(max-width:370px){.clock-panel{top:72px}}
-.project-card.is-expanded{background:rgba(18,18,26,.8);border-color:rgba(255,255,255,.24)}
-.project-card.is-expanded .project-extra{max-height:120px;opacity:1;margin:10px 0 0}

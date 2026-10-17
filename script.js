@@ -35,8 +35,6 @@
   const validTab = name => names.includes(name) ? name : 'links';
   function reveal(name) {
     panels.forEach(panel => { panel.hidden = panel.id !== `panel-${name}`; });
-    container.classList.toggle('has-projects', name === 'projects');
-    container.classList.toggle('has-discord', name === 'discord');
     activeTab = name;
   }
   function selectTab(name, options = {}) {
@@ -91,19 +89,6 @@
   selectTab(readHash(), { updateHash: false, instant: true });
   addEventListener('hashchange', () => selectTab(readHash(), { updateHash: false }));
 
-  document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('click', event => {
-      if (event.target.closest('a')) return;
-      card.classList.toggle('is-expanded');
-    });
-    card.addEventListener('keydown', event => {
-      if (event.target !== card) return;
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        card.classList.toggle('is-expanded');
-      }
-    });
-  });
 
   const audioFiles = Array.from({ length: 15 }, (_, i) => `assets/music/${String(i + 1).padStart(2, '0')}.part`);
   let musicReady = Promise.resolve(true);
