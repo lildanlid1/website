@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101016">
+  <meta name="description" content="@lildanlid — creator, developer and Minecraft Bedrock add-on maker.">
+  <meta property="og:title" content="@lildanlid">
+  <meta property="og:description" content="Links, projects and community.">
+  <meta property="og:image" content="assets/avatar.png">
+  <title>@lildanlid</title>
+  <link rel="icon" type="image/webp" href="assets/favicon.webp">
+  <link rel="preload" href="assets/roboto.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <svg class="svg-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <filter id="sketch-lines" x="-9%" y="-9%" width="118%" height="118%"><feTurbulence type="fractalNoise" baseFrequency=".055" numOctaves="2" seed="8" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale=".7" xChannelSelector="R" yChannelSelector="G"/></filter>
+    </defs>
+    <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="icon-discord" viewBox="0 0 32 32"><path d="M9.1 8.9c4.4-2.4 9.5-2.2 13.7.1l1.9 4.1c1.2 2.8 1.6 6.2 1.7 8.5-2.1 1.8-4.5 2.7-6.1 3.2l-1.1-2c-2.7.9-5.3 1-7.9.1l-1.2 1.9c-2.4-.8-4.6-1.7-6.2-3.3.2-5.4 1.3-9.5 5.2-12.6z"/><path d="M11.8 11.5 13 9.1m7 2.6-1-2.5M10 21.4c3.8 1.9 8.2 1.7 11.9 0"/><path d="M12.2 16.1v1.5m7-1.4v1.5" stroke-width="3"/></symbol>
+    <symbol id="icon-roblox" viewBox="0 0 32 32"><path d="m10 2.9 19.1 6-6.5 20.3L3.2 22.7z"/><path d="m13.6 12.1 7.4 2.3-2.3 7.3-7.3-2.4z"/></symbol>
+    <symbol id="icon-tiktok" viewBox="0 0 32 32"><path d="M18.5 4.2v16.4c0 5.3-3 7.5-7.2 7.2-4.3 0-7.2-3.3-7.2-7.2s3.1-6.9 7.4-6.9c.9 0 1.7.1 2.4.4"/><path d="M18.6 4.1c.6 5.4 4 8.4 9 8.6"/></symbol>
+    <symbol id="icon-twitch" viewBox="0 0 32 32"><path d="M7 4.6h22v16.1l-6.5 6.2H17l-4.9 3v-3H6.8V7.1Z"/><path d="M14 11.5v7.7m8-7.7v7.7"/></symbol>
+    <symbol id="icon-youtube" viewBox="0 0 32 32"><path d="M5.5 9c4.8-1.6 16.3-1.9 21 0 2.3 1.3 2.1 12.6 0 14-4.5 1.9-17.1 2-21 0-2.5-1.2-2.4-12.5 0-14Z"/><path d="m13.4 12.5 7.7 4-7.7 4.2z"/></symbol>
+    <symbol id="icon-curseforge" viewBox="0 0 32 32"><path d="M26.7 7.3c-5-2.7-15.7-2.6-21.1 3.2-3.6 4-1.2 12.5 3.5 15 3.9 2 10 2 14.7-1"/><path d="M12.6 12.3c-5.5 2.5-4.9 8.1 0 10.4m5.3-12.4v13.5m0-13.5h8m-8 6.1h6"/></symbol>
+    <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></symbol>
+    <symbol id="icon-volume" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Zm4 4a5 5 0 0 1 0 6m3-9a9 9 0 0 1 0 12"/></symbol>
+    <symbol id="icon-muted" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Zm5 4 5 6m0-6-5 6"/></symbol>
+  </svg>
+
+  <div class="background" aria-hidden="true">
+    <video id="bg-video" class="background-video" src="assets/background.mp4" poster="assets/background-poster.jpg" muted loop playsinline preload="metadata" autoplay></video>
+    <div class="background-blur"></div><div class="background-shade"></div>
+  </div>
+  <audio id="background-track" src="assets/feel-it-coming.mp3" preload="none" loop></audio>
+
+  <div id="welcome" class="welcome-screen" role="dialog" aria-modal="true" aria-label="Enter website">
+    <button id="enter-button" class="welcome-enter" type="button">
+      <span class="welcome-message">𖤐 𝑰 𝑳𝑶𝑽𝑬 𝒀𝑶𝑼 𖤐</span>
+      <span class="welcome-hint">click to enter...</span>
+    </button>
+  </div>
+
+  <aside class="clock-panel" aria-label="Current Auckland time">
+    <svg class="icon" aria-hidden="true"><use href="#icon-clock"/></svg>
+    <div class="clock-text"><time id="nz-time">--:--</time><span id="nz-date">Auckland, NZ</span></div>
+    <span class="clock-zone" id="nz-zone">NZ</span>
+  </aside>
+
+  <nav class="section-tabs" role="tablist" aria-label="Website sections">
+    <button type="button" role="tab" id="tab-links" data-tab="links" aria-controls="panel-links" aria-selected="true" tabindex="0">Links</button>
+    <button type="button" role="tab" id="tab-projects" data-tab="projects" aria-controls="panel-projects" aria-selected="false" tabindex="-1">Projects</button>
+    <button type="button" role="tab" id="tab-discord" data-tab="discord" aria-controls="panel-discord" aria-selected="false" tabindex="-1">Discord</button>
+    <button type="button" role="tab" id="tab-about" data-tab="about" aria-controls="panel-about" aria-selected="false" tabindex="-1">About</button>
+  </nav>
+
+  <main class="main-layout">
+    <div class="profile-wrap" id="profile-container">
+      <section id="panel-links" class="profile-view profile-view-links" role="tabpanel" aria-labelledby="tab-links" tabindex="0">
+        <header class="profile-heading">
+          <div class="avatar-wrap"><img class="avatar" src="assets/avatar.png" alt="lildanlid avatar" width="140" height="140"></div>
+          <div class="profile-identification">
+            <h1 class="neon-name glitch-name" data-text="@lildanlid">@lildanlid</h1>
+            <p class="profile-bio">Creator &amp; developer</p>
+            <p class="profile-location"><svg class="icon" aria-hidden="true"><use href="#icon-pin"/></svg> New Zealand</p>
+          </div>
+        </header>
+        <div class="profile-note">Minecraft Bedrock add-ons, bots, and things I enjoy building.</div>
+        <div class="links-footer">
+          <div class="links-icons" aria-label="Social links">
+            <a class="social-icon" href="https://discord.gg/GHWfnYbv68" target="_blank" rel="noopener noreferrer" aria-label="Discord" title="Discord"><svg aria-hidden="true"><use href="#icon-discord"/></svg></a>
+            <a class="social-icon" href="https://roblox.com/lildanlid" target="_blank" rel="noopener noreferrer" aria-label="Roblox" title="Roblox"><svg aria-hidden="true"><use href="#icon-roblox"/></svg></a>
+            <a class="social-icon" href="https://tiktok.com/@lildanlid" target="_blank" rel="noopener noreferrer" aria-label="TikTok" title="TikTok"><svg aria-hidden="true"><use href="#icon-tiktok"/></svg></a>
+            <a class="social-icon" href="https://twitch.tv/lildanlid" target="_blank" rel="noopener noreferrer" aria-label="Twitch" title="Twitch"><svg aria-hidden="true"><use href="#icon-twitch"/></svg></a>
+            <a class="social-icon" href="https://youtube.com/@lildanlid" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube"><svg aria-hidden="true"><use href="#icon-youtube"/></svg></a>
+            <a class="social-icon" href="https://www.curseforge.com/members/lildanlid/projects" target="_blank" rel="noopener noreferrer" aria-label="CurseForge" title="CurseForge"><svg aria-hidden="true"><use href="#icon-curseforge"/></svg></a>
+          </div>
+          <p class="tab-caption">Find me around the internet</p>
+        </div>
+      </section>
+
+      <section id="panel-projects" class="profile-view profile-view-projects" role="tabpanel" aria-labelledby="tab-projects" tabindex="0" hidden>
+        <div class="projects-heading"><h2 class="view-title">Selected projects</h2><p class="view-subtitle">Some things I've built for Minecraft Bedrock</p></div>
+        <div class="project-grid">
+          <article class="project-card" tabindex="0"><div class="project-top"><span class="project-index">01 / Add-on</span><span class="project-symbol" aria-hidden="true">↗</span></div><h3>SimpleTPA</h3><p class="project-short">Teleport requests without the hassle.</p><p class="project-extra">Send, accept and manage teleport requests with an intuitive interface, plus settings for multiplayer worlds.</p><a href="https://www.curseforge.com/minecraft-bedrock/addons/simpletpa" target="_blank" rel="noopener noreferrer">View project <span aria-hidden="true">↗</span></a></article>
+          <article class="project-card" tabindex="0"><div class="project-top"><span class="project-index">02 / Add-on</span><span class="project-symbol" aria-hidden="true">↗</span></div><h3>Auctioneer</h3><p class="project-short">An auction house for Bedrock servers.</p><p class="project-extra">Create listings, manage bids and buyouts, and support player-to-player trading in survival communities.</p><a href="https://www.curseforge.com/minecraft-bedrock/addons/auctioneer" target="_blank" rel="noopener noreferrer">View project <span aria-hidden="true">↗</span></a></article>
+          <article class="project-card" tabindex="0"><div class="project-top"><span class="project-index">03 / Utility</span><span class="project-symbol" aria-hidden="true">↗</span></div><h3>SimpleProtect</h3><p class="project-short">Easy region protection tools.</p><p class="project-extra">Protect builds and spawn areas with controls for combat, block editing, interactions and explosions.</p><a href="https://www.curseforge.com/minecraft-bedrock/scripts/simpleprotect" target="_blank" rel="noopener noreferrer">View project <span aria-hidden="true">↗</span></a></article>
+          <article class="project-card" tabindex="0"><div class="project-top"><span class="project-index">04 / Visuals</span><span class="project-symbol" aria-hidden="true">↗</span></div><h3>Feather Visuals</h3><p class="project-short">A vibrant visual upgrade.</p><p class="project-extra">A Bedrock texture pack focused on more vivid and immersive environments and atmosphere.</p><a href="https://www.curseforge.com/minecraft-bedrock/texture-packs/feather-visuals" target="_blank" rel="noopener noreferrer">View project <span aria-hidden="true">↗</span></a></article>
+        </div>
+        <p class="projects-help">Hover or focus a card for details</p>
+      </section>
+
+      <section id="panel-discord" class="profile-view profile-view-discord" role="tabpanel" aria-labelledby="tab-discord" tabindex="0" hidden>
+        <div class="view-head"><svg class="view-mark sketch-brand" aria-hidden="true"><use href="#icon-discord"/></svg><h2 class="view-title">Discord</h2><p class="view-subtitle">Hang out with the community</p></div>
+        <div class="discord-frame-wrap"><iframe title="Discord community server widget" src="https://discord.com/widget?id=1473244575907713099&amp;theme=dark" width="350" height="315" loading="lazy" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts" referrerpolicy="no-referrer"></iframe></div>
+        <a class="discord-join" href="https://discord.gg/GHWfnYbv68" target="_blank" rel="noopener noreferrer">Join the Discord <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></a>
+      </section>
+
+      <section id="panel-about" class="profile-view profile-view-about" role="tabpanel" aria-labelledby="tab-about" tabindex="0" hidden>
+        <div class="about-head"><img class="about-avatar" src="assets/avatar.png" alt="lildanlid avatar" width="70" height="70"><div><h2 class="view-title">About me</h2><p class="view-subtitle">@lildanlid</p></div></div>
+        <p class="about-paragraph">I build Minecraft Bedrock add-ons, Discord systems and small creative projects. I focus on useful features, refined interfaces and making things work reliably.</p>
+        <dl class="about-list"><div><dt>Based in</dt><dd>New Zealand</dd></div><div><dt>Projects</dt><dd>Minecraft Bedrock &amp; more</dd></div><div><dt>Creator</dt><dd>FeatherStudios</dd></div></dl>
+      </section>
+    </div>
+  </main>
+
+  <div class="audio-control" id="audio-control">
+    <button class="sound-control" id="sound-button" type="button" aria-label="Toggle music" aria-pressed="false" aria-controls="volume-slider"><svg class="icon" aria-hidden="true"><use id="sound-icon" href="#icon-muted"/></svg></button>
+    <div class="volume-area"><label class="sr-only" for="volume-slider">Music volume</label><input id="volume-slider" type="range" min="0" max="100" value="45" aria-label="Music volume" style="--level:45%"/></div>
+  </div>
+</body>
+</html>
